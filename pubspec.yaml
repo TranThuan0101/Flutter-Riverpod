@@ -28,3 +28,6 @@ flutter:
 
   assets:
     - assets/avatar.png
+    - assets/iphone15.png
+    - assets/macbookpro.jpeg
+    - assets/ipadpro.png
