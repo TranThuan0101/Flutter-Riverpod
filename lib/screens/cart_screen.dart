@@ -12,37 +12,16 @@ class CartScreen extends ConsumerWidget {
     final cart = ref.watch(cartProvider);
     final cartNotifier = ref.read(cartProvider.notifier);
 
-    String qrData(double amount) {
-      final accountNumber = '0123456789';
-      final bankName = 'Vietcombank';
-      final accountName = 'Tran Phuoc Thuan';
-      final orderId = DateTime.now().millisecondsSinceEpoch;
-
-      return '''
-{
-  "bank": "$bankName",
-  "accountNumber": "$accountNumber",
-  "accountName": "$accountName",
-  "amount": ${amount.toStringAsFixed(2)},
-  "content": "Thanh toan don hang $orderId"
-}
-''';
-    }
-
     return Scaffold(
-      appBar: AppBar(title: const Text('Giỏ hàng')),
+      
       body:
           cart.isEmpty
               ? const Center(child: Text('Giỏ hàng trống'))
               : Column(
                 children: [
                   const SizedBox(height: 10),
-
-                  // BIỂU ĐỒ PIE
                   CartPieChart(cart: cart),
                   const SizedBox(height: 10),
-
-                  // DANH SÁCH SẢN PHẨM
                   Expanded(
                     child: ListView.builder(
                       itemCount: cart.length,
@@ -63,8 +42,6 @@ class CartScreen extends ConsumerWidget {
                       },
                     ),
                   ),
-
-                  // TỔNG VÀ NÚT THANH TOÁN
                   Padding(
                     padding: const EdgeInsets.all(16),
                     child: Column(
@@ -105,6 +82,9 @@ class CartScreen extends ConsumerWidget {
                         ),
                         const SizedBox(height: 10),
                         ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.orange,
+                          ),
                           onPressed: () {
                             showDialog(
                               context: context,
@@ -177,9 +157,6 @@ class CartScreen extends ConsumerWidget {
                             );
                           },
                           child: const Text('Chuyển khoản ngân hàng'),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.orange,
-                          ),
                         ),
                       ],
                     ),
@@ -189,5 +166,3 @@ class CartScreen extends ConsumerWidget {
     );
   }
 }
-
-
