@@ -35,7 +35,7 @@ class CartPieChart extends StatelessWidget {
                 );
               }).toList(),
           sectionsSpace: 2,
-          centerSpaceRadius: 30,
+          centerSpaceRadius: 10,
         ),
       ),
     );

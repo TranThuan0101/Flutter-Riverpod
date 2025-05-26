@@ -15,8 +15,11 @@ dependencies:
   provider: ^6.0.5
   flutter_riverpod: ^2.5.1
   auto_size_text: ^3.0.0
-  fl_chart: ^0.66.0
+  fl_chart: ^0.64.0
+
   flutter_animate: ^4.3.0
+  flutter_radar_chart: ^0.2.1
+
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +31,3 @@ flutter:
 
   assets:
     - assets/avatar.png
-    - assets/iphone15.png
-    - assets/macbookpro.jpeg
-    - assets/ipadpro.png

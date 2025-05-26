@@ -1,9 +1,10 @@
+import 'package:demoprovider/providers/product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-import '../providers/product_provider.dart';
+
 import '../providers/cart_provider.dart';
 import 'cart_screen.dart';
 import 'myproffile/myprofile_screen.dart';
